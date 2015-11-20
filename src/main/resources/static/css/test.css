@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+.jeocloud-login-panel {
+	background-color:#FFF;
+}
+.jeocloud-layer{
+	opacity: 0.8;
+	background-color:#262626;
+}
+
+.jeocloud-layer-display{
+	background-color:#FFF;
+}
+
+/* 用来包围bootstrap的container，使container居中，原理未知  */
+.jeocloud-vertical-center-outter {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+
+/*  */
+.jeocloud-padding-vertical-200px {
+	padding-top: 200px;
+	padding-bottom: 200px;
+}

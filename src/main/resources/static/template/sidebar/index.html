@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li ng-click="isCollapsed = !isCollapsed">
+                	<a href="#">Dashboard</a>
+                	<ul  uib-collapse="isCollapsed">
+                		<li>
+                			<a href="#">Dashboard</a>
+                		</li>
+                		<li>
+                			<a href="#">Dashboard</a>
+                		</li>
+                	</ul>
+                    
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                	<a ui-sref="state1">State 1</a>
+                </li>
+                <li>
+                	 <a ui-sref="state2">State 2</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12" ng-controller="myController">
+                        <h1>Simple Sidebar</h1>
+                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" ng-click="test()">Toggle Menu</a>
+                    </div>
+                </div>
+                <div class="row">
+                	<div class="col-lg-12">
+                		 <div ui-view></div>
+    					 <!-- We'll also add some navigation: -->
+                	</div>
+                </div>	
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    
+	 <!-- jQuery -->
+    <script src="js/jquery-2.1.4.js"></script>
+    
+	<!-- Bootstrap Core JavaScript -->
+    <script src="js/angular.min.js"></script>
+	
+	<!-- ui router core js -->
+	<script src="js/angular-ui-router.min.js"></script>   
+	
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+	<!-- angular js bootstrap ui core -->
+	<script src="js/ui-bootstrap-tpls.min.js"></script>
+		
+	<!-- web app core js -->
+	<script src="app/ctrl/ui-ctrl.js"></script>
+	<script src="app/app.js"></script>
+	
+    <!-- Menu Toggle Script -->
+    <script>
+
+    </script>
+
+</body>
+
+</html>

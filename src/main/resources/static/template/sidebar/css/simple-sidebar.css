@@ -60,8 +60,14 @@
 }
 
 .sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
+    /* text-indent: 20px; */
+   /*  line-height: 40px; */
+   /*通过内填充，让sidebar中的每一个li的宽都有一定的大小*/
+   padding: 10px;
+}
+.sidebar-nav ul {
+	/* 去除ul标签自带样式中前面的点 */
+	 list-style:none;
 }
 
 .sidebar-nav li a {

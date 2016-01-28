@@ -17,6 +17,12 @@
     <!-- Custom CSS -->
     <link href="css/simple-sidebar.css" rel="stylesheet">
 
+	<!-- foot awesome css -->
+	<link href="../../common/css/font-awesome.css" rel="stylesheet">
+	<!-- PNotify css -->
+	<link href="css/pnotify.custom.css" rel="stylesheet">
+	<!-- component css -->
+	<link href="css/component.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,7 +32,7 @@
 
 </head>
 
-<body>
+<body ng-controller="rootController">
 
     <div id="wrapper">
 
@@ -38,8 +44,18 @@
                         Start Bootstrap
                     </a>
                 </li>
-                <li ng-click="isCollapsed = !isCollapsed">
-                	<a href="#">Dashboard</a>
+                <li>
+                	<div class="input-group">
+                    	<input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                        	<button class="btn btn-default" type="button">
+                        		<i class="fa fa-search"></i>
+                        	</button>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                	<a href="#" ng-click="isCollapsed = !isCollapsed">Dashboard</a>
                 	<ul  uib-collapse="isCollapsed">
                 		<li>
                 			<a href="#">Dashboard</a>
@@ -51,16 +67,16 @@
                     
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#" ng-click="showNotify($event)">show notify</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="#" ng-click="removeAllNotify($event)">remove all notify</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#" ng-click="showDeskTopNotify($event)">showDeskTopNotify</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#" ng-click="showDynamicNotify($event)">showDynamicNotify</a>
                 </li>
                 <li>
                     <a href="#">Services</a>
@@ -75,27 +91,44 @@
                 	 <a ui-sref="state2">State 2</a>
                 </li>
             </ul>
-        </div>
+       </div>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12" ng-controller="myController">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle" ng-click="test()">Toggle Menu</a>
+                    <div class="col-lg-6 col-md-6 col-sm-7">
+                        <h1 id="menu-toggle" ng-click="test($event)">Simple Sidebar</h1>
                     </div>
+                    <div class="col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-1">
+	                    <div class="pull-right jc-first-row-icon"><i class="fa fa-android"></i></div>
+	                    <div class="pull-right jc-first-row-icon"><i class="fa fa-opencart"></i></div>
+	                    <div class="pull-right jc-first-row-icon"><i class="fa fa-search"></i></div>
+	                </div>
                 </div>
+                <hr style="margin-top: 1px; margin-bottom: 1px;">
                 <div class="row">
+                	<div class="col-lg-12 col-md-12 col-sm-12">
+                		<div class="pull-right jc-second-row-icon"><i class="fa fa-android"></i></div>
+	                    <div class="pull-right jc-second-row-icon"><i class="fa fa-opencart"></i></div>
+	                    <div class="pull-right jc-second-row-icon"><i class="fa fa-search"></i></div>
+                	</div>
+                </div>
+                 <hr style="margin-top: 1px; margin-bottom: 1px;">
+            </div>
+           
+            <div class=""container-fluid" ">
+            	 <div class="row">
                 	<div class="col-lg-12">
-                		 <div ui-view></div>
+                		<!--  <div ui-view>
+                		 	
+                		 </div> -->
     					 <!-- We'll also add some navigation: -->
                 	</div>
                 </div>	
             </div>
+             
         </div>
         <!-- /#page-content-wrapper -->
 
@@ -103,27 +136,30 @@
     <!-- /#wrapper -->
     
 	 <!-- jQuery -->
-    <script src="js/jquery-2.1.4.js"></script>
+    <script src="../../common/js/jquery-2.1.4.js"></script>
     
 	<!-- Bootstrap Core JavaScript -->
-    <script src="js/angular.min.js"></script>
+    <script src="../../common/js/angular.min.js"></script>
 	
 	<!-- ui router core js -->
-	<script src="js/angular-ui-router.min.js"></script>   
+	<script src="../../common/js/angular-ui-router.min.js"></script>   
 	
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+	<script src="../../common/js/bootstrap.min.js"></script>
+	
 	<!-- angular js bootstrap ui core -->
-	<script src="js/ui-bootstrap-tpls.min.js"></script>
-		
+	<script src="../../common/js/ui-bootstrap-tpls.min.js"></script>	
+	
+	<!-- Pnotify core js -->
+	<script src="js/pnotify.custom.js"></script>
+	
 	<!-- web app core js -->
 	<script src="app/ctrl/ui-ctrl.js"></script>
 	<script src="app/app.js"></script>
 	
     <!-- Menu Toggle Script -->
     <script>
-
+		
     </script>
 
 </body>
